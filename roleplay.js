@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./prefix.json');
-const { prefix } = require('./prefix.json');
+//const { prefix } = require('./prefix.json');
+const prefix = "!"
 const Enmap = require('enmap');
 
 client.on(`ready`, () => {
@@ -33,7 +34,7 @@ client.user.setActivity('Roleplay Action');
 // });
 
 client.on('message', async (message) => {
-   if (message.content.startsWith(`${prefix}startup`)) {
+  if (message.content.startsWith(`${prefix}startup`)) {
   let roleembed = new Discord.RichEmbed()
   .setColor()
   .addField("Roleplay ROLES", "<:lewdie:537322180447436806> = <@&499314075449425940>" + "\n" + "<:smuggal:537322213490032651> = <@&514348752589291536>")
