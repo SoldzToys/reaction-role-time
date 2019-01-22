@@ -2,9 +2,9 @@
   "name": "mrs-roleplay",
   "version": "2.0.0",
   "description": "a reaction role bot",
-  "main": "indexplay.js",
+  "main": "roleplay.js",
   "scripts": {
-    "start": "node indexplay.js"
+    "start": "node roleplay.js"
   },
   "author": "Soldz",
   "license": "ISC",
