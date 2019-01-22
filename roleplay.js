@@ -74,12 +74,35 @@ let fetchedMessage = await channel.fetchMessage(reaction)
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
-  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: <@${emojipick}${emojipick.id}>` + "\n" + `Emoji Added By: <@${message.author.id}>`)
+  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: ${emojipick}` + "\n" + `Emoji Added By: <@${message.author.id}>`)
  message.channel.send(reactionembed) //message.guild.emojis.get(emojipick))
    message.delete()
 //  .catch(console.error);
  console.log(`Reacted!`) 
  }
+  
+//    if (message.content.startsWith(`${prefix}removereact`)) {
+// let args = message.content.split(/ +/g).slice(1)
+//     let reaction = args[0]
+//    if (!reaction) return message.channel.send("Insert a message ID")
+//    let emojis = args.slice(1).join(" ");
+//    if (!emojis) return message.channel.send("No emoji picked?! Try again.")
+// //       let reactie = args.slice(1).join(" ");
+// //    if (!reactie) return message.channel.send("No emoji picked?! Try again.")
+//   let emojipick = client.emojis.find(emoji => emoji.name === emojis) //emojis.get(args[0])  
+// //    let emojipick = message.guild.emojis.get(reactie)
+//    if (!emojipick) return message.channel.send("No such emoji is there.")
+//    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
+// let fetchedMessage = await channel.fetchMessage(reaction)
+// await fetchedMessage.react(emojipick)
+//   let reactionembed = new Discord.RichEmbed()
+//   .setColor(0xc470fa)
+//   .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: ${emojipick}` + "\n" + `Emoji Added By: <@${message.author.id}>`)
+//  message.channel.send(reactionembed) //message.guild.emojis.get(emojipick))
+//    message.delete()
+// //  .catch(console.error);
+//  console.log(`Reacted!`) 
+//  }
 
 });
 
