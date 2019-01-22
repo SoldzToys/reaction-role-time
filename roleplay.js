@@ -60,9 +60,9 @@ message.delete()
   
  if (message.content.startsWith(`${prefix}react`)) {
 let args = message.content.split(/ +/g).slice(1)
-    let reaction = args[1] 
+    let reaction = args[0]
  if (!reaction) return message.channel.send("Insert a message ID")
-   let emoji = args.join(" ")
+   let emoji = args.slice(1).join(" ");
    let emojipick = client.emojis.find(emoji => emoji.name === emoji)
    if (!emojipick) return message.channel.send("No emoji picked?! Try again.")
    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
