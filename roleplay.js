@@ -50,9 +50,10 @@ message.delete()
   // if (!reaction) return message.channel.send("Insert a message ID")
    if (!args) return message.channel.send("Insert a message ID")
    let channel = message.guild.channels.find(c => c.name === 'roletime');
-   channel.fetchMessage(args[1])
+   channel.fetchMessage(args[0])
    args.react('⭐')
    .catch(console.error);
+   console.log("Depression.") 
   //.catch(e => console.log(e));
  }
 });
