@@ -43,6 +43,11 @@ await reacttime.react(message.guild.emojis.get('461698583465426973'))
 await reacttime.react(message.guild.emojis.get('461698993261510676'))
 message.delete()
 }
+  
+ if (message.content.startsWith(`${prefix}react`)) {
+   if (message.id === '537335150997012491').then(r => r.react('⭐'))
+ //    message.id.react('⭐')
+ }
 });
 
 client.on("messageReactionAdd", async (reaction, user) => {
