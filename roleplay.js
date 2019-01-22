@@ -38,7 +38,6 @@ client.on('message', async (message) => {
   let roleembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
   .addField("Roleplay Roles", "<:lewd:461698583465426973> = <@&536255042143911946>" + "\n" + "<:SmugGal:461698993261510676> = <@&537106357732507688>")
->")
  let reacttime = await message.channel.send(roleembed)
 await reacttime.react(message.guild.emojis.get('461698583465426973'))
 await reacttime.react(message.guild.emojis.get('461698993261510676'))
