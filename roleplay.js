@@ -62,6 +62,7 @@ message.delete()
  let args = message.content.slice(1).split(" "); 
  let reaction = args.slice(1)
  if (!reaction) return message.channel.send("Insert a message ID")
+     if (!args[1]) return message.channel.send("Pick an emoji as well.")
    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
  channel.fetchMessage(args[0]).then(messages => {
     message.channel.fetchMessage(messages.array()[1].id).react(args[1])
