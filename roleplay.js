@@ -45,17 +45,22 @@ message.delete()
 }
   
  if (message.content.startsWith(`${prefix}react`)) {
-   let args = message.content.split(/ +/g).slice(1) 
-  // let reaction = args.slice(1)
-  // if (!reaction) return message.channel.send("Insert a message ID")
-   if (!args) return message.channel.send("Insert a message ID")
-   let channel = message.guild.channels.find(c => c.name === 'roletime');
-   channel.fetchMessage(args[0])
-   args.react('⭐')
-   .catch(console.error);
-   console.log("Depression.") 
-  //.catch(e => console.log(e));
+//    let args = message.content.split(/ +/g).slice(1) 
+//   // let reaction = args.slice(1)
+//   // if (!reaction) return message.channel.send("Insert a message ID")
+//    if (!args) return message.channel.send("Insert a message ID")
+//    let reactionthis = args.slice(1)
+//    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
+//    channel.fetchMessage(args[0])
+//   re.react('⭐')
+//    .catch(console.error);
+//    console.log(`Reacted to ${args}!`) 
+//   //.catch(e => console.log(e));
  }
+  if (message.content.startsWith(`${prefix}actuallyworking`)) {
+    message.channel.fetchMessages({limit:2}).then(messages => {
+    message.channel.fetchMessage(messages.array()[1].id).react('⭐')
+})
 });
 
 client.on("messageReactionAdd", async (reaction, user) => {
