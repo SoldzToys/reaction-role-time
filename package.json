@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node roleplay.js"
   },
-  "author": "Mitch",
+  "author": "Soldz",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
