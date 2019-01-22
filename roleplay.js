@@ -49,8 +49,8 @@ message.delete()
    let reaction = args.slice(1)
    if (!reaction) return message.channel.send("Insert a message ID")
    let channel = message.guild.channels.find(c => c.name === 'roletime');
-   let hehe = await channel.fetchMessage(reaction)
-   await hehe.react('⭐')
+   channel.fetchMessage(reaction)
+   reaction.react('⭐')
    .catch(console.error);
   //.catch(e => console.log(e));
  }
