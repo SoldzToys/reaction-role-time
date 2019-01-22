@@ -64,7 +64,8 @@ let args = message.content.split(/ +/g).slice(1)
    if (!reaction) return message.channel.send("Insert a message ID")
    let emojis = args.slice(1).join(" ");
    if (!emojis) return message.channel.send("No emoji picked?! Try again.")
-   let emojipick = client.emojis.find(emoji => emoji.name === emojis)
+ //  let emojipick = client.emojis.find(emoji => emoji.name === emojis)
+   let emojipick = message.guild.emojis.get(emojis)
    if (!emojipick) return message.channel.send("No such emoji is there.")
    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
 let fetchedMessage = await channel.fetchMessage(reaction)
