@@ -74,8 +74,7 @@ let args = message.content.split(/ +/g).slice(1)
    if (!emojipick) return message.channel.send("No such emoji is there.")
    client.on('messageReactionAdd', async (reaction, user) => {
      var message = reaction.message;
-    if (reaction.emoji.name === emojipick) return; 
-   });
+    if (reaction.emoji.name === emojipick) return message.channel.send("This message already has this emoji.");
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
 let fetchedMessage = await channel.fetchMessage(reaction) 
 await fetchedMessage.react(emojipick)
@@ -86,6 +85,7 @@ await fetchedMessage.react(emojipick)
    message.delete()
 //  .catch(console.error);
  console.log(`Reacted!`) 
+   });
  }
   
 //    if (message.content.startsWith(`${prefix}removereact`)) {
