@@ -73,6 +73,11 @@ let args = message.content.split(/ +/g).slice(1)
 //    let emojipick = message.guild.emojis.get(reactie)
    if (!emojipick) return message.channel.send("No such emoji is there.")
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
+client.on('messageReactionAdd', async (reaction, user) => {
+  if (reaction.emoji.name === emojipick) { 
+    return message.channel.send("This message already has this emoji.")
+  }
+});
 let fetchedMessage = await channel.fetchMessage(reaction) 
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
