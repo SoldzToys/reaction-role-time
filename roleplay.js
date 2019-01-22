@@ -68,11 +68,11 @@ let args = message.content.split(/ +/g).slice(1)
    if (!emojis) return message.channel.send("No emoji picked?! Try again.")
 //       let reactie = args.slice(1).join(" ");
 //    if (!reactie) return message.channel.send("No emoji picked?! Try again.")
-  let emojipick = client.emojis.find(emoji => emoji.name === emojis) //emojis.get(args[0])  
+  let emojipick = client.emojis.find(emoji => emoji.identifier === emojis) //emojis.get(args[0])  
 //    let emojipick = message.guild.emojis.get(reactie)
    if (!emojipick) return message.channel.send("No such emoji is there.")
    
-   if (emojipick === emojis) return message.channel.send("This message already has this emoji.") 
+  // if (reaction.has) return message.channel.send("This message already has this emoji.") 
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
 let fetchedMessage = await channel.fetchMessage(reaction)
 await fetchedMessage.react(emojipick)
