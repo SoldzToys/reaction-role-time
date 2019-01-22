@@ -58,20 +58,16 @@ message.delete()
 // //   //.catch(e => console.log(e));
 //  }
   
-   if (message.content.startsWith(`${prefix}react`)) {
- let args = message.content.slice(1).split(" "); 
- let reaction = args.slice(1)
+ if (message.content.startsWith(`${prefix}react`)) {
+let args = message.content.split(/ +/g).slice(1)
+ let reaction = args.join(' ')
  if (!reaction) return message.channel.send("Insert a message ID")
-//      let reaction2 = (args[1])
-//      if (!reaction2) return message.channel.send("Pick an emoji as well.")
    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
- channel.fetchMessage(args[0]).then(messages => {
-    message.channel.fetchMessage(messages.array()[1].id).react('⭐')
- //.react(args[1])
+let fetchedMessage = await channel.fetchMessage(args[0])
+fetchedMessage.react('⭐')
  .catch(console.error);
- console.log(`Reacted to ${args}!`) 
+ console.log(`Reacted!`) 
  .catch(e => console.log(e));
- })
  }
 
 });
