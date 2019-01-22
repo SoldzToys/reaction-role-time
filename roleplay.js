@@ -47,9 +47,11 @@ message.delete()
  if (message.content.startsWith(`${prefix}react`)) {
    let args = message.content.split(/ +/g).slice(1) 
    let reaction = args.slice(1)
-   let channel = message.guild.roles.find(c => c.name === 'roletime');
+   let channel = message.guild.channels.find(c => c.name === 'roletime');
    let hehe = await channel.fetchMessage(args[0])
-   await hehe.react('⭐').catch(e => console.log(e));
+   await hehe.react('⭐')
+   .catch(console.error);
+  //.catch(e => console.log(e));
  }
 });
 
