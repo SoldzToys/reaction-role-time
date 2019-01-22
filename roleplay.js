@@ -64,7 +64,7 @@ let args = message.content.split(/ +/g).slice(1)
  if (!reaction) return message.channel.send("Insert a message ID")
    let channel = message.guild.channels.find(c => c.id === '534561180811919360');
 let fetchedMessage = await channel.fetchMessage(args[0])
-fetchedMessage.react('⭐')
+fetchedMessage.react(message.guild.emojis.get(args[1]))
  .catch(console.error);
  console.log(`Reacted!`) 
  .catch(e => console.log(e));
