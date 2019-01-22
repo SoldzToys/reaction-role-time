@@ -45,8 +45,11 @@ message.delete()
 }
   
  if (message.content.startsWith(`${prefix}react`)) {
-   if (message.id === '537335150997012491').then(r => r.react('⭐'))
- //    message.id.react('⭐')
+   let args = message.content.split(/ +/g).slice(1) 
+   let reaction = args.slice(1)
+   let channel = message.guild.roles.find(c => c.name === 'roletime');
+   let hehe = await channel.fetchMessage(args[0])
+   await hehe.react('⭐').catch(e => console.log(e));
  }
 });
 
