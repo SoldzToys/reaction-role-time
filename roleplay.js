@@ -60,6 +60,7 @@ message.delete()
   
  if (message.content.startsWith(`${prefix}react`)) {
 let args = message.content.split(/ +/g).slice(1)
+//   if (emojipick) return message.channel.send("This message already has this emoji.")
      let channel = message.guild.channels.find(c => c.name === args[0]);
      if (!channel) return message.channel.send("Make sure to choose a channel.") 
     let reaction = args[1]
@@ -73,8 +74,7 @@ let args = message.content.split(/ +/g).slice(1)
    if (!emojipick) return message.channel.send("No such emoji is there.")
    
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
-let fetchedMessage = await channel.fetchMessage(reaction)
-if (reaction) return message.channel.send("This message already has this emoji.") 
+let fetchedMessage = await channel.fetchMessage(reaction) 
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
