@@ -61,6 +61,7 @@ message.delete()
     message.channel.fetchMessages({limit:2}).then(messages => {
     message.channel.fetchMessage(messages.array()[1].id).react('⭐')
 })
+}
 });
 
 client.on("messageReactionAdd", async (reaction, user) => {
