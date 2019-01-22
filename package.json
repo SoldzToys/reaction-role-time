@@ -1,0 +1,19 @@
+{
+  "name": "mrs-roleplay",
+  "version": "1.0.0",
+  "description": "a reaction role bot",
+  "main": "roleplay.js",
+  "scripts": {
+    "start": "node roleplay.js"
+  },
+  "author": "Mitch",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ms": "^2.1.1",
+    "snekfetch": "^4.0.4",
+    "superagent": "^3.8.3",
+     "moment": "^2.22.2",
+     "moment-duration-format": "^2.2.2"
+  }
+}
