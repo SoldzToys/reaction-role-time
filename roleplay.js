@@ -72,12 +72,21 @@ let args = message.content.split(/ +/g).slice(1)
   let emojipick = client.emojis.find(emoji => emoji.name === emojis) //emojis.get(args[0])  
 //    let emojipick = message.guild.emojis.get(reactie)
    if (!emojipick) return message.channel.send("No such emoji is there.")
+//     message.channel.send("Good work, here is the next part.") 
+//     let beginning = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 })
+//     beginning.on('collect', async (message) => {
+//             if (message.content.toLowerCase().startsWith("addrole")) {
+//  let role = args.slice(1).join(" ");
+//   if(!role) return message.channel.send("Pick a role you want to add to this user.");
+//   let addrole = message.guild.roles.find(r => r.name === role);
+//   if (!addrole) return message.channel.send("The role you've picked either doesn't exist or you've spelled it wrong.");
+//             })
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
-client.on('messageReactionAdd', async (reaction, user) => {
-  if (reaction.emoji.name === emojipick) { 
-    return message.channel.send("This message already has this emoji.")
-  }
-});
+// client.on('messageReactionAdd', async (reaction, user) => {
+//   if (reaction.emoji.name === emojipick) { 
+//     return message.channel.send("This message already has this emoji.")
+//   }
+// });
 let fetchedMessage = await channel.fetchMessage(reaction) 
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
