@@ -37,7 +37,7 @@ client.on('message', async (message) => {
   if (message.content.startsWith(`${prefix}startup`)) {
   let roleembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
-  .addField("Roleplay Roles", "<:lewd:461698583465426973> = <@&537106357732507688>" + "\n" + "<:SmugGal:461698993261510676> = <@&536255042143911946
+  .addField("Roleplay Roles", "<:lewd:461698583465426973> = <@&536255042143911946>" + "\n" + "<:SmugGal:461698993261510676> = <@&537106357732507688>")
 >")
  let reacttime = await message.channel.send(roleembed)
 await reacttime.react(message.guild.emojis.get('461698583465426973'))
@@ -51,29 +51,29 @@ client.on("messageReactionAdd", async (reaction, user) => {
    if (reaction.emoji.name === 'lewd') {
      if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
-    await reactionmember.addRole('537106357732507688')
+    await reactionmember.addRole('536255042143911946')
      // if(reactionmember.roles.has("499314075449425940")) return;
    //  reactionmember.send("Congrats, you've self-assigned yourself the Finished Product Testers role.")
      console.log("Worked! It's added. (RolePlayer)");
    } else if (reaction.emoji.name === 'SmugGal')  { 
      if (message.author.bot) return
      let reactionmember2 = message.guild.members.get(user.id);
-    await reactionmember2.addRole('514348752589291536')
+    await reactionmember2.addRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-assigned yourself the NSFW ACCESS role.")
      console.log("Worked! It's added. (Lore Roleplayer)");
    }
 });
-
 client.on("messageReactionRemove", async (reaction, user) => {
      const message = reaction.message;
+
    if (reaction.emoji.name === 'lewdie') {
      let reactionmember = message.guild.members.get(user.id);
-   await reactionmember.removeRole('537106357732507688')
+   await reactionmember.removeRole('536255042143911946')
 //   reactionmember.send("Congrats, you've self-removed yourself the Finished Product Testers role.")
      console.log("Worked! It's removed. (RolePlayer)")
     } else if (reaction.emoji.name === 'smuggal') {
      let reactionmember2 = message.guild.members.get(user.id);
-    await reactionmember2.removeRole('514348752589291536')
+    await reactionmember2.removeRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-removed yourself the NSFW ACCESS role.")
      console.log("Worked! It's removed. (Lore Roleplayer)");
    }
