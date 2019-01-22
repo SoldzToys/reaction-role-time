@@ -74,7 +74,7 @@ let fetchedMessage = await channel.fetchMessage(reaction)
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
-  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: ${emojipick.id}`)
+  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: <@${emojipick.id}>`)
  message.channel.send(reactionembed) //message.guild.emojis.get(emojipick))
    message.delete()
 //  .catch(console.error);
