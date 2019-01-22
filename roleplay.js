@@ -51,7 +51,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
     await reactionmember.addRole('499314075449425940')
      // if(reactionmember.roles.has("499314075449425940")) return;
    //  reactionmember.send("Congrats, you've self-assigned yourself the Finished Product Testers role.")
-     console.log("Worked! It's added. (FPT)");
+     console.log("Worked! It's added. ()");
    } else if (reaction.emoji.name === 'smuggal')  { 
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.addRole('514348752589291536')
@@ -66,12 +66,12 @@ client.on("messageReactionRemove", async (reaction, user) => {
      let reactionmember = message.guild.members.get(user.id);
    await reactionmember.removeRole('499314075449425940')
 //   reactionmember.send("Congrats, you've self-removed yourself the Finished Product Testers role.")
-     console.log("Worked! It's removed. (FPT)")
+     console.log("Worked! It's removed. ()")
     } else if (reaction.emoji.name === 'smuggal') {
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.removeRole('514348752589291536')
    //  reactionmember2.send("Congrats, you've self-removed yourself the NSFW ACCESS role.")
-     console.log("Worked! It's removed. (NA)");
+     console.log("Worked! It's removed. ()");
    }
 });
 
