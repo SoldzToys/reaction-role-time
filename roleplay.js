@@ -60,7 +60,7 @@ message.delete()
   
  if (message.content.startsWith(`${prefix}react`)) {
 let args = message.content.split(/ +/g).slice(1)
-     let channel = message.guild.channels.find(c => c.channel === args[0]);
+     let channel = message.guild.channels.find(c => c.name === args[0]);
      if (!channel) return message.channel.send("Make sure to choose a channel.") 
     let reaction = args[1]
    if (!reaction) return message.channel.send("Insert a message ID.")
@@ -76,7 +76,7 @@ let fetchedMessage = await channel.fetchMessage(reaction)
 await fetchedMessage.react(emojipick)
   let reactionembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
-  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Emoji: ${emojipick}` + "\n" + `Emoji Added By: <@${message.author.id}>`)
+  .addField("Reaction successfully added!", `Message ID: ${reaction}` + "\n" + `Channel: <#${channel}>` + "\n" + `Emoji: ${emojipick}` + "\n" + `Emoji Added By: <@${message.author.id}>`)
  message.channel.send(reactionembed) //message.guild.emojis.get(emojipick))
    message.delete()
 //  .catch(console.error);
