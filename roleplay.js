@@ -60,7 +60,7 @@ message.delete()
   
  if (message.content.startsWith(`${prefix}react`)) {
 let args = message.content.split(/ +/g).slice(1)
-     let channel = message.guild.channels.find(c => c.name === `#args[0]`);
+     let channel = message.guild.channels.find(c => c.name === args[0]);
      if (!channel) return message.channel.send("Make sure to choose a channel.") 
     let reaction = args[1]
    if (!reaction) return message.channel.send("Insert a message ID.")
@@ -71,7 +71,8 @@ let args = message.content.split(/ +/g).slice(1)
   let emojipick = client.emojis.find(emoji => emoji.name === emojis) //emojis.get(args[0])  
 //    let emojipick = message.guild.emojis.get(reactie)
    if (!emojipick) return message.channel.send("No such emoji is there.")
- //  if (emojipick.reaction) return message.channel.send("This message already has this emoji.") 
+   
+   if (emojipick) return message.channel.send("This message already has this emoji.") 
    //let channel = message.guild.channels.find(c => c.id === '534561180811919360');
 let fetchedMessage = await channel.fetchMessage(reaction)
 await fetchedMessage.react(emojipick)
