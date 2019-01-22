@@ -48,12 +48,14 @@ message.delete()
 client.on("messageReactionAdd", async (reaction, user) => {
      const message = reaction.message;
    if (reaction.emoji.name === 'lewdie') {
+     if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('499314075449425940')
      // if(reactionmember.roles.has("499314075449425940")) return;
    //  reactionmember.send("Congrats, you've self-assigned yourself the Finished Product Testers role.")
      console.log("Worked! It's added. ()");
    } else if (reaction.emoji.name === 'smuggal')  { 
+     if (message.author.bot) return
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.addRole('514348752589291536')
    //  reactionmember2.send("Congrats, you've self-assigned yourself the NSFW ACCESS role.")
