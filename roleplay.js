@@ -5,7 +5,7 @@ const { prefix } = require('./prefix.json');
 const Enmap = require('enmap');
 
 client.on(`ready`, () => {
-  console.log(`I am ready!`);
+  console.log(`Roleplaying time!`);
 client.user.setActivity('Roleplay Action');
   
 });
