@@ -71,7 +71,7 @@ message.delete()
    //  if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
-       .setColor(0xc470fa)
+       .setColor("c470fa")
        .addField("Profile Artwork By", "Willibeest#2814")
        .addField("Bot Made By", "Soldz (CF)#6819")
        .setThumbnail(bicon) 
