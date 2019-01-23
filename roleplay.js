@@ -67,6 +67,8 @@ message.delete()
      let admin2 = "178706812864823296"
      let admin3 = "235581033662251008"
      if (message.author.id !==  superiors.admin1)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
+     if (message.author.id !==  superiors.admin2)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
+     if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
        .setColor(0xc470fa)
