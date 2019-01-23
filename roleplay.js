@@ -7,7 +7,7 @@ const Enmap = require('enmap');
 
 client.on(`ready`, () => {
   console.log(`Roleplaying time!`);
-client.user.setActivity('Roleplay Action');
+client.user.setActivity('Roleplay Action (!info)');
   
 });
 
@@ -35,6 +35,7 @@ client.user.setActivity('Roleplay Action');
 
 client.on('message', async (message) => {
   if (message.content.startsWith(`${prefix}startup`)) {
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have the <@365789462292332547> role! Only members with that role can use this command.");
   let roleembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
   .addField("Roleplay Roles", "<:lewd:461698583465426973> = <@&536255042143911946>" + "\n" + "<:SmugGal:461698993261510676> = <@&537106357732507688>")
@@ -58,7 +59,16 @@ message.delete()
 // //   //.catch(e => console.log(e));
 //  }
   
+   if (message.content.startsWith(`${prefix}info`)) {
+     let embed = new Discord.RichEmbed()
+       .setColor(0xc470fa)
+       .addField("Profile Artwork", "Willibeest#2814")
+       .addField("Made By", "Soldz (CF)#6819")
+     message.channel.send(embed)
+   }
+  
  if (message.content.startsWith(`${prefix}react`)) {
+ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have the <@365789462292332547> role! Only members with that role can use this command.");
 let args = message.content.split(/ +/g).slice(1)
 //   if (emojipick) return message.channel.send("This message already has this emoji.")
      let channel = message.guild.channels.find(c => c.name === args[0]);
