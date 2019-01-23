@@ -61,7 +61,7 @@ message.delete()
 //  }
   
    if (message.content.startsWith(`${prefix}info`)) {
-     const array = ['363499842607120384', '178706812864823296', '235581033662251008']
+     const array = ['363499842607120384' || '178706812864823296' || '235581033662251008']
 //      if(message.author.id !== superiors.admins) return; 
      let admin1 = "363499842607120384"
      let admin2 = "178706812864823296"
