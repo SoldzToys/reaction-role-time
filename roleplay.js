@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./prefix.json');
 const superiors = require('./admins.json');
-const admins = ["363499842607120384", "178706812864823296", "235581033662251008"]
+const admins = ['363499842607120384', '178706812864823296', '235581033662251008']
 //const { prefix } = require('./prefix.json');
 const prefix = "!"
 const Enmap = require('enmap');
@@ -63,10 +63,11 @@ message.delete()
   
    if (message.content.startsWith(`${prefix}info`)) {
 //      if(message.author.id !== superiors.admins) return; 
+     const admins = ['363499842607120384', '178706812864823296', '235581033662251008']
      let admin1 = "363499842607120384"
      let admin2 = "178706812864823296"
      let admin3 = "235581033662251008"
-     if (message.author.id !==  superiors.admin1 || superiors.admin2 || superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
+     if (message.author.id !== admins)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
    //  if (message.author.id !==  superiors.admin2)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
    //  if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
