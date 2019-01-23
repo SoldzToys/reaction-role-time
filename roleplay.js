@@ -155,26 +155,22 @@ client.on("messageReactionAdd", async (reaction, user) => {
    //  reactionmember.send("Congrats, you've self-assigned yourself the Finished Product Testers role.")
      console.log("Worked! It's added. (RolePlayer)");
    } else if (reaction.emoji.name === 'SmugGal')  { 
-     const message = reaction.message;
      if (message.author.bot) return
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.addRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-assigned yourself the NSFW ACCESS role.")
      console.log("Worked! It's added. (Lore Roleplayer)");
      } else if (reaction.emoji.name === 'peachy')  { 
-       const message = reaction.message;
      if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('492096695203528717')
           console.log("Worked! It's added. (peachy)");
        } else if (reaction.emoji.name === 'shellhappy')  { 
-         const message = reaction.message;
               if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('498778090802118659')
           console.log("Worked! It's added. (fileaccess)");
          } else if (reaction.emoji.name === 'shellWAT')  {
-           const message = reaction.message;
                         if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('496863657347645471')
@@ -183,7 +179,6 @@ client.on("messageReactionAdd", async (reaction, user) => {
 });
 client.on("messageReactionRemove", async (reaction, user) => {
      const message = reaction.message;
-
    if (reaction.emoji.name === 'lewdie') {
      let reactionmember = message.guild.members.get(user.id);
    await reactionmember.removeRole('536255042143911946')
@@ -195,17 +190,14 @@ client.on("messageReactionRemove", async (reaction, user) => {
    //  reactionmember2.send("Congrats, you've self-removed yourself the NSFW ACCESS role.")
      console.log("Worked! It's removed. (Lore Roleplayer)");
            } else if (reaction.emoji.name === 'peachy')  { 
-     if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('492096695203528717')
   //      console.log("Worked! It's added. (peachy)");
        } else if (reaction.emoji.name === 'shellhappy')  { 
-              if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('498778090802118659')
 //        console.log("Worked! It's added. (fileaccess)");
          } else if (reaction.emoji.name === 'shellWAT')  {
-                        if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('496863657347645471')
   //      console.log("Worked! It's added. (New Tester)");
