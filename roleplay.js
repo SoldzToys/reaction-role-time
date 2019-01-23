@@ -157,12 +157,12 @@ client.on("messageReactionAdd", async (reaction, user) => {
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('492096695203528717')
           console.log("Worked! It's added. (peachy)");
-       } else if (reaction.emoji.name === 'shellhappy-1')  { 
+       } else if (reaction.emoji.name === 'shellhappy')  { 
               if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('498778090802118659')
           console.log("Worked! It's added. (fileaccess)");
-         } else if (reaction.emoji.name === 'shellWAT-1')  {
+         } else if (reaction.emoji.name === 'shellWAT')  {
                         if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('496863657347645471')
@@ -187,12 +187,12 @@ client.on("messageReactionRemove", async (reaction, user) => {
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('492096695203528717')
   //      console.log("Worked! It's added. (peachy)");
-       } else if (reaction.emoji.name === 'shellhappy-1')  { 
+       } else if (reaction.emoji.name === 'shellhappy')  { 
               if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('498778090802118659')
 //        console.log("Worked! It's added. (fileaccess)");
-         } else if (reaction.emoji.name === 'shellWAT-1')  {
+         } else if (reaction.emoji.name === 'shellWAT')  {
                         if (message.author.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.removeRole('496863657347645471')
