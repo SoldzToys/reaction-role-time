@@ -61,12 +61,12 @@ message.delete()
 //  }
   
    if (message.content.startsWith(`${prefix}info`)) {
-     const array = ['363499842607120384' || '178706812864823296' || '235581033662251008']
+     let admins = '363499842607120384' || '178706812864823296' || '235581033662251008'
 //      if(message.author.id !== superiors.admins) return; 
      let admin1 = "363499842607120384"
      let admin2 = "178706812864823296"
      let admin3 = "235581033662251008"
-     if (message.author.id !== array) return message.channel.send("blah")
+     if (message.author.id !== admins) return message.channel.send("blah")
    //  if (message.author.id !== '363499842607120384' || '178706812864823296' || '235581033662251008') return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
    //  if (message.author.id !==  superiors.admin2)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
    //  if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
