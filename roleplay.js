@@ -68,7 +68,7 @@ message.delete()
    //  if (message.author.id !==  superiors.admin3)return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
-       .setColor(c470fa)
+       .setColor(0xc470fa)
        .addField("Profile Artwork By", "Willibeest#2814")
        .addField("Bot Made By", "Soldz (CF)#6819")
        .setThumbnail(bicon) 
@@ -229,10 +229,10 @@ client.on('raw', packet => {
 });
 
 	client.on('guildCreate', guild => {
-  let channel = client.channels.get("516493956507369472");
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
-      .setColor(0xcee3f8)
+      .setColor(0xc470fa)
       .setAuthor(`Joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
       .addField("Owner", guild.owner.user.tag)
@@ -249,31 +249,14 @@ return channel.send(`https://discord.gg/${newInvite.code}`)
     });
   });
 
- 	// client.on('guildCreate', guild => {
- 	// let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
- 	// let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
- 	// //   let channel = guild.channels.find(c => c.name === 'general')
- 	// //let oof = guild.channels.random().then(a => a.send(joinembed))
- 	// let channel = guild.owner
- 	// let joinembed = new Discord.RichEmbed()
- 	// .setColor(0xcee3f8)
- 	// .addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
- 	// .setImage(redditimage)
- 	// .setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
- 	// return channel.send(joinembed);
- 	// });
-
  	client.on('guildCreate', guild => {
-         let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
-      let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
   //   let channel = guild.channels.find(c => c.name === 'general')
    //let oof = guild.channels.random().then(a => a.send(joinembed))
   let channel = guild.owner
     let joinembed = new Discord.RichEmbed()
-    .setColor(0xcee3f8)
-    .addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
-    .setImage(redditimage)
-    .setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
+    .setColor(0xc470fa)
+    .addField(`Thank you for inviting ${client.user.username}!`, "I will make sure to make all of your reaction role dreams come to life!")
+    .setFooter("Bot Created By Soldz (CF)#6819")
     return channel.send(joinembed);
     });
 
@@ -288,24 +271,21 @@ return channel.send(`https://discord.gg/${newInvite.code}`)
     	break Loop;
      	}
    	}
- 	let redditimage = "https://image.ibb.co/hpQqaV/reddit-combo-1920.png"
- 	let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png"
  	let channel = client.channels.get(guild.systemChannelID || channelID);
  	let joinembed = new Discord.RichEmbed()
- 	.setColor(0xcee3f8)
- 	.addField(`Thank you for inviting ${client.user.username}!`, "There really isn't any setup, but you will need to know that this bot has selected subreddits both SFW and NSFW. If there are any errors with any of command feel free to send them via `r/error`, thank you and enjoy reddit!")
- 	.setImage(redditimage)
- 	.setFooter("Powered By Reddit | Bot Created By Soldz (CF)#6819", reddit)
+ 	 .setColor(0xc470fa)
+    .addField(`Thank you for inviting ${client.user.username}!`, "I will make sure to make all of your reaction role dreams come to life!")
+    .setFooter("Bot Created By Soldz (CF)#6819")
  	return channel.send(joinembed);
  	});
 
 
 
 client.on('guildDelete', guild => {
-  let channel = client.channels.get("516493956507369472");
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
-      .setColor(0xcee3f8)
+      .setColor(0xc470fa)
       .setAuthor(`Left ${guild.name}`)
       .setThumbnail(guild.iconURL)
       .addField("Owner", guild.owner.user.tag)
@@ -316,10 +296,10 @@ client.on('guildDelete', guild => {
 });     
 
 client.on("guildUpdate", function (oldGuild, newGuild) {
-         let channel = client.channels.get("516493956507369472");
+         let channel = client.channels.get("499832353544470539");
 	 let gicon = newGuild.iconURL;
         const eeembed = new Discord.RichEmbed()
-            .setColor(0xcee3f8)
+            .setColor(0xc470fa)
             .setThumbnail(gicon)
             .setAuthor(`A Guild Has been Updated`, gicon)
             .addField(`Old Guild Name:`, `${oldGuild}`)
