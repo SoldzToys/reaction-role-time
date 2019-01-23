@@ -161,7 +161,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
    //  reactionmember2.send("Congrats, you've self-assigned yourself the NSFW ACCESS role.")
      console.log("Worked! It's added. (Lore Roleplayer)");
      } else if (reaction.emoji.name === 'peachy')  { 
-     if (message.user.bot) return
+     if (user.bot) return
      let reactionmember = message.guild.members.get(user.id);
     await reactionmember.addRole('492096695203528717')
           console.log("Worked! It's added. (peachy)");
