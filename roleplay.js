@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./prefix.json');
+const superiors = require('./admins.json');
 //const { prefix } = require('./prefix.json');
 const prefix = "!"
 const Enmap = require('enmap');
@@ -35,7 +36,8 @@ client.user.setActivity('Roleplay Action (!info)');
 
 client.on('message', async (message) => {
   if (message.content.startsWith(`${prefix}startup`)) {
- //if(!message.member.roles.has("365789462292332547")) return message.channel.send("You don't have the <@&365789462292332547> role! Only members with that role can use this command.");
+if(message.author.id !== superiors.admins) return; 
+//if(!message.member.roles.has("365789462292332547")) return message.channel.send("You don't have the <@&365789462292332547> role! Only members with that role can use this command.");
   let roleembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
   .addField("Roleplay Roles", "<:lewd:461698583465426973> = <@&536255042143911946>" + "\n" + "<:SmugGal:461698993261510676> = <@&537106357732507688>")
