@@ -63,7 +63,7 @@ message.delete()
   
    if (message.content.startsWith(`${prefix}info`)) {
 //      if(message.author.id !== superiors.admins) return; 
-     if (message.author.id !== admins) return;
+     if (message.author.id !== "363499842607120384" || "178706812864823296" || "235581033662251008") return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(10000));
      let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
        .setColor(0xc470fa)
