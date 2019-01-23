@@ -60,10 +60,12 @@ message.delete()
 //  }
   
    if (message.content.startsWith(`${prefix}info`)) {
+     let bicon = client.user.displayAvatarURL;
      let embed = new Discord.RichEmbed()
        .setColor(0xc470fa)
-       .addField("Profile Artwork", "Willibeest#2814")
-       .addField("Made By", "Soldz (CF)#6819")
+       .addField("Profile Artwork By", "Willibeest#2814")
+       .addField("Bot Made By", "Soldz (CF)#6819")
+       .setThumbnail(bicon) 
      message.channel.send(embed)
    }
   
