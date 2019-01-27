@@ -35,9 +35,9 @@ client.user.setActivity('Roleplay Action (!info)');
 // });
 
 client.on('message', async (message) => {
-  if (message.content.startsWith(`${prefix}startup`)) {
-         let admins = '363499842607120384' || '178706812864823296' || '235581033662251008'
-     if (message.author.id !== admins) return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(30000));
+  if (message.content.startsWith(`${prefix}startup`)) { 
+         let admins = ['363499842607120384', '178706812864823296', '235581033662251008']
+    if (!admins.includes(message.author.id)) return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(30000));
 //if(!message.member.roles.has("365789462292332547")) return message.channel.send("You don't have the <@&365789462292332547> role! Only members with that role can use this command.");
   let roleembed = new Discord.RichEmbed()
   .setColor(0xc470fa)
@@ -76,8 +76,8 @@ message.delete()
    }
   
  if (message.content.startsWith(`${prefix}react`)) {
-        let admins = '363499842607120384' || '178706812864823296' || '235581033662251008'
-     if (message.author.id !== admins) return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(30000));
+             let admins = ['363499842607120384', '178706812864823296', '235581033662251008']
+    if (!admins.includes(message.author.id)) return message.channel.send("Since you aren't `Sai#8085` or `GLRC Sneky God of Chaos#3714`, you can't use this command.").then(message => message.delete(30000));
 // if(!message.member.roles.has("365789462292332547")) return message.channel.send("You don't have the <@&365789462292332547> role! Only members with that role can use this command.");
 let args = message.content.split(/ +/g).slice(1)
 //   if (emojipick) return message.channel.send("This message already has this emoji.")
