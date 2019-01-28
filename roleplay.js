@@ -203,12 +203,12 @@ client.on("messageReactionRemove", async (reaction, user) => {
       logs.send(removeembed)
      console.log("Worked! It's removed. (RolePlayer)")
     } else if (reaction.emoji.name === 'SmugGal') {
-     let reactionmember2 = message.guild.members.get(user.id);
-    await reactionmember2.removeRole('537106357732507688')
+     let reactionmember = message.guild.members.get(user.id);
+    await reactionmember.removeRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-removed yourself the NSFW ACCESS role.")
     let removeembed = new Discord.RichEmbed()
       .setColor(0xc470fa)
-      .addField(`Role Removal: ${reactionmember2.user.tag}`, `${reactionmember2} had the <@&537106357732507688> role removed from themselves.`)
+      .addField(`Role Removal: ${reactionmember.user.tag}`, `${reactionmember} had the <@&537106357732507688> role removed from themselves.`)
       logs.send(removeembed)
      console.log("Worked! It's removed. (Lore Roleplayer)");
            } else if (reaction.emoji.name === 'peachy')  { 
