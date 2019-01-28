@@ -193,7 +193,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
 client.on("messageReactionRemove", async (reaction, user) => {
      const message = reaction.message; 
      const logs = message.guild.channels.find(c => c.name === 'logs');
-   if (reaction.emoji.name === 'lewdie') {
+   if (reaction.emoji.name === 'lewd') {
      let reactionmember = message.guild.members.get(user.id);
    await reactionmember.removeRole('536255042143911946')
 //   reactionmember.send("Congrats, you've self-removed yourself the Finished Product Testers role.")
@@ -202,7 +202,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
       .addField(`Role Removal: ${reactionmember.user.tag}`, `${reactionmember} had the <@&536255042143911946> role removed from themselves.`)
       logs.send(removeembed)
      console.log("Worked! It's removed. (RolePlayer)")
-    } else if (reaction.emoji.name === 'smuggal') {
+    } else if (reaction.emoji.name === 'SmugGal') {
      let reactionmember2 = message.guild.members.get(user.id);
     await reactionmember2.removeRole('537106357732507688')
    //  reactionmember2.send("Congrats, you've self-removed yourself the NSFW ACCESS role.")
